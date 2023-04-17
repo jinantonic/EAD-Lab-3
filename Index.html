@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+        <title>Jina's Website</title>
+  
+        
+        <!-- Google Fonts -->
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+        <link href = "https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,600;1,600&family=Mulish:ital,wght@0,300;0,700;0,900;1,900&family=Raleway:wght@600;700&family=Roboto+Slab:wght@900&family=Titillium+Web:wght@400;600;700&display=swap" rel = "stylesheet">    
+        
+        <!-- CSS & JavaScript -->
+        <link href = "Style/Style.css" rel = "stylesheet">
+        <!-- <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+        <script src = "Express.js"></script>
+    </head>   
+
+    <body>
+        <div id = "buttons">
+            <button id = "btn1">Show Colour</button>
+            <button id = "btn2">Insert Colour</button>
+            <button id = "btn3">Remove Colour</button>
+            <button id = "btn4">Modify Colour</button>
+            <button id = "btn5">Select Background</button>
+        </div>
+
+        <div id = "colour_container">
+            <form class = "colour_input" name = "colour_input" action = "#">
+                <input type = "number" id = "ColourId" name ="ColourId" placeholder = "ColourId" maxlength = "10" required></label>
+                <input type = "text" id = "hexString" name = "hexString" placeholder = "hexString" maxlength = "10"required></label>
+                <input type = "text" id = "RGB" name = "RGB" placeholder = "RGB" maxlength = "20" required></label>
+                <input type = "text" id = "HSL" name = "HSL" placeholder = "HSL" maxlength = "20" required></label>
+                <input type = "text" id = "Name" name = "Name" placeholder = "Name" maxlength = "20" required></label>
+            </form>
+            
+        </div>
+
+        <div id = "colour_display"></div>
+        
+        
+
+    </body>
+</html>

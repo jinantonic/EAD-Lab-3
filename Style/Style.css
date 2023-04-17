@@ -1,0 +1,16 @@
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-color: #F2F2F2;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-style: Bold;
+    font-weight: 700;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #495464;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+}
