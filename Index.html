@@ -21,45 +21,48 @@
     <body>
         <div class="grid-container">
             <div class="button-container">
-              <button>Show Colour</button>
-              <button>Insert Colour</button>
-              <button>Remove Colour</button>
-              <button>Modify Colour</button>
-              <button>Select Background</button>
+                <button>Button 1</button>
+                <button>Button 2</button>
+                <button>Button 3</button>
+                <button>Button 4</button>
+                <button>Button 5</button>
             </div>
 
-            <div class="colour-container">
-              <div class="colour-box">
-                <div class="colour-row">
-                  <label for="ColourId">ColourId:</label>
-                  <input type="number" id="ColourId" name="ColourId" placeholder="ColourId" maxlength="10" required>
+            <div class="input-container">
+                <div class="colour-box">
+                    <div class="colour-row">
+                        <label for="ColourId">ColourId:</label>
+                        <input type="number" id="ColourId" name="ColourId" placeholder="ColourId" maxlength="10" required>
+                    </div>
+                    <div class="colour-row">
+                        <label for="hexString">hexString:</label>
+                        <input type="text" id="hexString" name="hexString" placeholder="hexString" maxlength="10" required>
+                    </div>
+                    <div class="colour-row">
+                        <label for="RGB">RGB:</label>
+                        <input type="text" id="RGB" name="RGB" placeholder="RGB" maxlength="20" required>
+                    </div>
+                    <div class="colour-row">
+                        <label for="HSL">HSL:</label>
+                        <input type="text" id="HSL" name="HSL" placeholder="HSL" maxlength="20" required>
+                    </div>
+                    <div class="colour-row">
+                        <label for="Name">Name:</label>
+                        <input type="text" id="Name" name="Name" placeholder="Name" maxlength="20" required>
+                    </div>
                 </div>
-                <div class="colour-row">
-                  <label for="hexString">hexString:</label>
-                  <input type="text" id="hexString" name="hexString" placeholder="hexString" maxlength="10" required>
+
+                <div class="display-colour-box">
+                    <div>Display colour:</div>
+                    <div class="colour-sample"></div>
                 </div>
-                <div class="colour-row">
-                  <label for="RGB">RGB:</label>
-                  <input type="text" id="RGB" name="RGB" placeholder="RGB" maxlength="20" required>
-                </div>
-                <div class="colour-row">
-                  <label for="HSL">HSL:</label>
-                  <input type="text" id="HSL" name="HSL" placeholder="HSL" maxlength="20" required>
-                </div>
-                <div class="colour-row">
-                  <label for="Name">Name:</label>
-                  <input type="text" id="Name" name="Name" placeholder="Name" maxlength="20" required>
-                </div>
-              </div>
             </div>
-          </div>
+          
+            
           
           
-          
-          
-
-            <div id = "colour_display"></div>
-
+    
+        </div>
         
 
     </body>
