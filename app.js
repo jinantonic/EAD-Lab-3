@@ -14,10 +14,8 @@ app.get('/colours', (req, res) => {
     res.json(colours);
 });
 
-// // Use the built-in JSON middleware to parse incoming JSON request bodies
-// app.use(express.json());
-
-
+// Use the built-in JSON middleware to parse incoming JSON request bodies
+app.use(express.json());
 
 // GET /colours/:id - Get the details of colour id :id
 app.get('/colours/:id', (req, res) => {

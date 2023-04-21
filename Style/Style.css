@@ -14,3 +14,46 @@ h1 {
     margin-bottom: 15px;
     padding-bottom: 20px;
 }
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% 70%; /* button container is 20%, input container is 70% */
+    grid-gap: 20px; /* add some space between the columns */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container button {
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.colour-box {
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.colour-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.colour-row label {
+    margin-right: 10px;
+}
+  
+  
+  
