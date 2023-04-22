@@ -1,7 +1,6 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-
 const app = express();
 const dataFilePath = path.join(__dirname, 'data/data.json');
 const rawData = fs.readFileSync(dataFilePath);
@@ -17,7 +16,7 @@ app.get('/colours', (req, res) => {
 // Use the built-in JSON middleware to parse incoming JSON request bodies
 app.use(express.json());
 
-// GET /colours/:id - Get the details of colour id :id
+// GET /colours/:id - Get the details of colour id
 app.get('/colours/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const colour = colours.find(c => c.colorId === id);
@@ -44,7 +43,7 @@ app.post('/colours', (req, res) => {
     res.status(201).json({ uri: `/colours/${newColour.colorId}` });
 });
 
-// PUT /colours/:id - Modify colour id :id (creates one if it doesn't already exist)
+// PUT /colours/:id - Modify colour id (creates one if it doesn't already exist)
 app.put('/colours/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const { hexString, rgb, hsl, name } = req.body;
@@ -56,11 +55,11 @@ app.put('/colours/:id', (req, res) => {
         colour.name = name;
     } else {
         colour = {
-        colorId: id,
-        hexString,
-        rgb,
-        hsl,
-        name
+            colorId: id,
+            hexString,
+            rgb,
+            hsl,
+            name
         };
         colours.push(colour);
     }
@@ -68,7 +67,7 @@ app.put('/colours/:id', (req, res) => {
     res.json({ uri: `/colours/${colour.colorId}` });
 });
 
-// DELETE /colours/:id - Delete colour id :id
+// DELETE /colours/:id - Delete colour id (if it exists)
 app.delete('/colours/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const index = colours.findIndex(c => c.colorId === id);

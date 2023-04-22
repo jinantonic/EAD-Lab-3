@@ -19,66 +19,66 @@ h1 {
     display: grid;
     grid-template-columns: 20% 70%; /* button container is 20%, input container is 70% */
     grid-gap: 20px; /* add some space between the columns */
-  }
+}
   
-  .button-container {
+.button-container {
     display: flex;
     flex-direction: column;
-  }
+}
   
-  .button-container button {
+.button-container button {
     margin-bottom: 10px;
-  }
+}
   
-  .input-container {
+.input-container {
     display: flex;
-    justify-content: left;
+    justify-content: space-between; /* add this line to distribute the items evenly */
     border: 1px solid black;
     width: 100%;
-  }
+}
   
-  .colour-box {
+.colour-box {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    
-  }
+    width: 70%; /* reduce the width to make room for the display-colour-box */
+}
   
-  .colour-row {
+.colour-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
-  }
+}
   
-  .colour-row label {
+.colour-row label {
     margin-right: 10px;
     flex-basis: 30%; /* set the label's width to 30% */
-  }
+}
   
-  .colour-row input {
+.colour-row input {
     flex-grow: 1; /* allow the input to grow to fill remaining space */
-  }
+}
 
-  .display-colour-box {
+.display-colour-box {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: right;
-    width: 30%;
-  }
+    align-items: center; /* align the box to the right end */
+    justify-content: right; /* align the box to the bottom of its container */
+    width: 30%; /* set the width to 30% to match the width of the button container */
+}
   
-  .display-colour-box div {
+.display-colour-box div {
     margin-bottom: 10px;
-  }
+}
   
-  .colour-sample {
-    width: 50px;
-    height: 50px;
+.colour-sample {
+    width: 100px;
+    height: 100px;
     border: 1px solid black;
     margin-bottom: 10px;
-  }
+}
   
   
   
