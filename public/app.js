@@ -6,6 +6,9 @@ const dataFilePath = path.join(__dirname, 'data/data.json');
 const rawData = fs.readFileSync(dataFilePath);
 const colours = JSON.parse(rawData);
 
+// Serve static files from the public directory
+app.use(express.static('public'));
+
 console.log('Loaded colours:', colours);
 
 // GET /colours - Get the list of all colours and their details
