@@ -35,7 +35,7 @@
                 <div class="colour-box">
                     <div class="colour-row">
                         <label for="ColourId">ColourId:</label>
-                        <input type="number" id="ColourId" name="ColourId" placeholder="ColourId" maxlength="10" required>
+                        <input type="text" id="ColourId" name="ColourId" placeholder="ColourId" maxlength="10" required>
                     </div>
                     <div class="colour-row">
                         <label for="hexString">hexString:</label>
@@ -60,9 +60,15 @@
                     <div class="colour-sample"></div>
                 </div>
 
+                <div class="nav-container">
+                    <button id="btnLeft" class="nav-btn">&larr;</button>
+                    <input type="text" id="ColourIdNav" name="ColourIdNav" placeholder="ColourId" maxlength="3" required>
+                    <button id="btnRight" class="nav-btn">&rarr;</button>
+                  </div>
+                  
+                
             </div>
         </div>
-
 
         <div id = "table-div">
             <table id = "table-content">
@@ -70,7 +76,7 @@
                     <tr id = "table-header">
                         <td>Display</td>
                         <td>Xterm Number</td>
-                        <td>ColourId</td>
+                        <!-- <td>ColourId</td> -->
                         <td>Xterm Name</td>
                         <td>HEX</td>
                         <td>RGB</td>

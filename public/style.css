@@ -32,16 +32,19 @@ h1 {
   
 .input-container {
     display: flex;
-    justify-content: space-between; /* add this line to distribute the items evenly */
+    position: relative; /* add this line to make the position of nav-container relative to input-container */
+    justify-content: space-between;
     border: 1px solid black;
     width: 100%;
+    align-items: center;
+    margin-top: 20px;
 }
-  
+
 .colour-box {
     padding: 10px;
     display: flex;
     flex-direction: column;
-    width: 70%; /* reduce the width to make room for the display-colour-box */
+    width: 60%;
 }
   
 .colour-row {
@@ -61,24 +64,40 @@ h1 {
 }
 
 .display-colour-box {
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* align the box to the right end */
-    justify-content: right; /* align the box to the bottom of its container */
-    width: 30%; /* set the width to 30% to match the width of the button container */
+    align-items: center;
+    width: 40%;
+    margin-left: 20px;
+    margin-right: 20px;
 }
-  
-.display-colour-box div {
-    margin-bottom: 10px;
-}
-  
+
 .colour-sample {
     width: 100px;
     height: 100px;
     border: 1px solid black;
     margin-bottom: 10px;
 }
+
+.nav-container {
+    display: flex;
+    position: absolute; /* add this line to make the nav-container's position absolute */
+    bottom: 0; /* add this line to position the nav-container at the bottom of input-container */
+    right: 0; /* add this line to position the nav-container at the right of input-container */
+    margin-bottom: 10px;
+    margin-right: 10px;
+    align-items: center;
+    justify-content: center;
+}
   
+.nav-btn {
+    margin: 0 5px;
+}
+  
+#ColourIdNav {
+    width: 50px;
+    margin: 0 5px;
+    text-align: center;
+}
   
   
