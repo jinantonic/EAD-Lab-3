@@ -4,8 +4,11 @@ const path = require('path');
 const app = express();
 const dataFilePath = path.join(__dirname, 'data/data.json');
 const rawData = fs.readFileSync(dataFilePath);
-const originalData = JSON.parse(rawData);
+const backupData = fs.readFileSync(path.join(__dirname, "data/data-origin.json"));
+const originalData = JSON.parse(backupData);
+
 let colours = JSON.parse(rawData);
+
 
 // Serve static files from the public directory
 app.use(express.static('public'));
@@ -81,6 +84,9 @@ app.delete('/colours/:id', (req, res) => {
     const index = colours.findIndex(c => c.colorId === id);
     if (index >= 0) {
         colours.splice(index, 1);
+        for (let i = index; i < colours.length; i++) {
+            colours[i].colorId--;
+        }
         fs.writeFileSync(dataFilePath, JSON.stringify(colours));
         res.sendStatus(204);
     } else {
@@ -89,11 +95,12 @@ app.delete('/colours/:id', (req, res) => {
 });
 
 // PUT /reset - Reset the colours to the original data
-app.put('/reset', (req, res) => {
-    const rawData = fs.readFileSync(dataFilePath);
-    const originalData = JSON.parse(rawData);
-    colours.splice(0, colours.length, ...originalData);
-    fs.writeFileSync(dataFilePath, JSON.stringify(colours));
+app.put('/reset_colours', (req, res) => {
+    // const rawData = fs.readFileSync(dataFilePath);
+    // const originalData = JSON.parse(rawData);
+    // colours.splice(0, colours.length, ...originalData);
+    colours = originalData;
+    fs.writeFileSync(dataFilePath, JSON.stringify(originalData));
     res.sendStatus(204);
 });
 
