@@ -4,7 +4,8 @@ const path = require('path');
 const app = express();
 const dataFilePath = path.join(__dirname, 'data/data.json');
 const rawData = fs.readFileSync(dataFilePath);
-const colours = JSON.parse(rawData);
+const originalData = JSON.parse(rawData);
+let colours = JSON.parse(rawData);
 
 // Serve static files from the public directory
 app.use(express.static('public'));
@@ -18,6 +19,10 @@ app.get('/colours', (req, res) => {
 
 // Use the built-in JSON middleware to parse incoming JSON request bodies
 app.use(express.json());
+
+app.use(express.urlencoded({
+    extended: true
+}))
 
 // GET /colours/:id - Get the details of colour id
 app.get('/colours/:id', (req, res) => {
@@ -81,6 +86,15 @@ app.delete('/colours/:id', (req, res) => {
     } else {
         res.status(404).send('Colour not found');
     }
+});
+
+// PUT /reset - Reset the colours to the original data
+app.put('/reset', (req, res) => {
+    const rawData = fs.readFileSync(dataFilePath);
+    const originalData = JSON.parse(rawData);
+    colours.splice(0, colours.length, ...originalData);
+    fs.writeFileSync(dataFilePath, JSON.stringify(colours));
+    res.sendStatus(204);
 });
 
 // Middleware to handle invalid DELETE and PUT requests

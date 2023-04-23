@@ -13,7 +13,7 @@
         
         <!-- CSS & JavaScript -->
         <link href = "style.css" rel = "stylesheet">
-        <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src = "app.js"></script>
         <script src = "colour.js"></script>
     </head>   
@@ -26,6 +26,9 @@
                 <button id = "btn3">Remove Colour</button>
                 <button id = "btn4">Modify Colour</button>
                 <button id = "btn5">Select Background</button>
+                <button id = "btn6">Colour Table</button>
+                <button id = "btn7">Clear</button>
+                <button id = "btn8">Reset Table</button>
             </div>
 
             <div class="input-container">
@@ -56,8 +59,26 @@
                     <div>Display colour:</div>
                     <div class="colour-sample"></div>
                 </div>
-                
+
             </div>
+        </div>
+
+
+        <div id = "table-div">
+            <table id = "table-content">
+                <thead id = "table-header">
+                    <tr id = "table-header">
+                        <td>Display</td>
+                        <td>Xterm Number</td>
+                        <td>ColourId</td>
+                        <td>Xterm Name</td>
+                        <td>HEX</td>
+                        <td>RGB</td>
+                        <td>HSL</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </body>
 </html>
