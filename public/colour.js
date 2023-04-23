@@ -9,7 +9,7 @@
               $("#ColourId").val(colourId);
               $("#btn1").click(); // Trigger button 1 click event
             }
-          });
+        });
 
           
         $("#btn1").click(function() { // When the button 1 is clicked
@@ -196,22 +196,6 @@
             $('.colour-sample').css('background-color', '');
         });
 
-        // $("#btn8").click(function() {
-        //     $.ajax({
-        //         url: '/reset',
-        //         type: 'PUT',
-        //         contentType: 'application/json', // Add this line
-        //         success: function(result) {
-        //             alert('Colors reset successfully');
-        //             location.reload(); // Reload the page to display the reset data
-        //         },
-        //         error: function(xhr, status, error) {
-        //             // Display an error message if the reset fails
-        //             alert('Error resetting colors');
-        //         }
-        //     });
-        // });
-        
         $("#btnLeft").click(function() {
             let currentColourId = parseInt($('#ColourId').val());
             if (!isNaN(currentColourId) && currentColourId > 1) {
