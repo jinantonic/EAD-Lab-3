@@ -2,7 +2,10 @@
     var currentPage = 0; // The current page of data being displayed
     
     $(document).ready(function() { // When the document is ready
-        $("#ColourIdNav").on("keyup", function(event) {
+        $("#display-h2").hide(); // Hide the h2 element
+        $("#table-header").hide(); // Hide the table header
+        
+        $("#colourIdNav").on("keyup", function(event) {
             if (event.keyCode === 13) { // If Enter key is pressed
               event.preventDefault();
               const colourId = $(this).val();
@@ -20,11 +23,11 @@
                 $('#RGB').val("RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")");
                 $('#HSL').val("HSL(" + colour.hsl.h + ", " + colour.hsl.s + ", " + colour.hsl.l + ")");
                 $('#Name').val(colour.name);
-                $('#colour-sample').css('background-color', colour.hexString);
+                $('#display-colour').css('background-color', colour.hexString);
                 document.cookie = "colourId=" + colourId + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
 
                 // update the value of the input box between arrows
-                $('#ColourIdNav').val(colourId);
+                $('#colourIdNav').val(colourId);
             }).fail(function() {
                 // Display an error message if the colour is not found
                 alert('Colour not found');
@@ -37,22 +40,22 @@
         if (currentColor) {
             $("#ColourId").val(currentColor);
             $("#btn1").click();
-            $('#ColourIdNav').val(currentColor); // set the value of the input box between arrows
+            $('#colourIdNav').val(currentColor); // set the value of the input box between arrows
         }
 
 
         $("#btnLeft").click(function() { // When the left arrow button is clicked
-            let colourId = parseInt($('#ColourIdNav').val());
+            let colourId = parseInt($('#colourIdNav').val());
             if (colourId > 0) {
                 colourId--;
             }
-            $('#ColourIdNav').val(colourId);
+            $('#colourIdNav').val(colourId);
         });
     
         $("#btnRight").click(function() { // When the right arrow button is clicked
-            let colourId = parseInt($('#ColourIdNav').val());
+            let colourId = parseInt($('#colourIdNav').val());
             colourId++;
-            $('#ColourIdNav').val(colourId);
+            $('#colourIdNav').val(colourId);
         });
 
         $("#btn2").click(function() { // When the button 2 is clicked
@@ -95,28 +98,6 @@
     
         $("#btn3").click(function() { // When the button 3 is clicked
             const colourId = $('#ColourId').val();
-            if (colourId === currentColor) {
-                document.cookie = "colourId=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-            }
-            $.ajax({
-                url: `/colours/${colourId}`,
-                type: 'DELETE',
-                success: function(result) {
-                    alert(`Colour ${colourId} removed successfully`);
-                },
-                error: function(xhr, status, error) {
-                    if (xhr.status === 404) {
-                        alert('Colour not found');
-                    } else {
-                        alert('Error removing colour');
-                    }
-                }
-            });
-        }); // End Button 3
-        
-
-        $("#btn4").click(function() { // When the button 4 is clicked
-            const colourId = $('#ColourId').val();
             const hexString = $('#hexString').val();
             const rgb = { r: 0, g: 0, b: 0 }; // set default values for RGB
             const hsl = { h: 0, s: 0, l: 0 }; // set default values for HSL
@@ -134,10 +115,40 @@
                     alert('Error modifying colour');
                 }
             });
-        }); // End Buttion 4
+        }); // End Button 3
         
 
+        $("#btn4").click(function() { // When the button 4 is clicked
+            const colourId = $('#ColourId').val();
+            if (colourId === currentColor) {
+                document.cookie = "colourId=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+            }
+            $.ajax({
+                url: `/colours/${colourId}`,
+                type: 'DELETE',
+                success: function(result) {
+                    alert(`Colour ${colourId} removed successfully`);
+                },
+                error: function(xhr, status, error) {
+                    if (xhr.status === 404) {
+                        alert('Colour not found');
+                    } else {
+                        alert('Error removing colour');
+                    }
+                }
+            });
+        }); // End Buttion 4
+        
         $("#btn5").click(function() {
+            $('#ColourId').val('');
+            $('#hexString').val('');
+            $('#RGB').val('');
+            $('#HSL').val('');
+            $('#Name').val('');
+            $('#display-colour').css('background-color', '');
+        }); // End Button 5
+        
+        $("#btn6").click(function() { // When the button 6 is clicked
             const colourId = $('#ColourId').val();
             $.get(`/colours/${colourId}`, function(colour) {
                 // Update the display with the colour details
@@ -145,7 +156,7 @@
                 $('#RGB').val("RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")");
                 $('#HSL').val("HSL(" + colour.hsl.h + ", " + colour.hsl.s + ", " + colour.hsl.l + ")");
                 $('#Name').val(colour.name);
-                $('.colour-sample').css('background-color', colour.hexString);
+                $('#display-colour').css('background-color', colour.hexString);
                 $('body').css('background-color', colour.hexString); // Change the background color of the entire page
                 document.cookie = "colourId=" + colourId + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
             }).fail(function() {
@@ -153,17 +164,18 @@
                 alert('Colour not found');
                 $(location).attr('href','404.html');
             });
-        }); // End Button 5
-        
+        }); // End Button 6
 
-        $("#btn6").click(function() { // When the button 6 is clicked
-            $("#table-content tbody").empty(); // clear the table body first
+        $("#btn7").click(function() { // When the button 7 is clicked
+            $("#display-h2").show(); 
+            $("#table-header").show();
+            
             $.get("/colours", function(colours) {
                 $.each(colours, function(index, colour) {
                     const rgbString = "RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")";
                     const hslString = "HSL(" + colour.hsl.h + ", " + colour.hsl.s + ", " + colour.hsl.l + ")";
                     const row = `<tr>
-                                    <td><div class="colour-sample" style="background-color:${colour.hexString}"></div></td>
+                                    <td><div class="display-colour" style="background-color:${colour.hexString}"></div></td>
                                     <td>${colour.colorId}</td>
                                     <td>${colour.name}</td>
                                     <td>${colour.hexString}</td>
@@ -177,18 +189,8 @@
                 alert('Colours data not found');
                 $(location).attr('href','404.html');
             });
-        }); // End Button 6
-
-
-
-        $("#btn7").click(function() { // When the button 7 is clicked
-            $('#ColourId').val('');
-            $('#hexString').val('');
-            $('#RGB').val('');
-            $('#HSL').val('');
-            $('#Name').val('');
-            $('.colour-sample').css('background-color', '');
         });
+
 
         $("#btnLeft").click(function() {
             let currentColourId = parseInt($('#ColourId').val());
