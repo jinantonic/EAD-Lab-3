@@ -1,5 +1,5 @@
 # EAD-Lab-3
-This assignment is about using Express.js for managing an application that performs operations related to colours.<br><br><br>
+This assignment is about using Express.js for managing an application that performs operations related to colours.<br><br>
 The file with all the 256 colours can be downloaded from the Colours URL: https://jonasjacek.github.io/colors/ <br>
 The exact links for the JSON object is: https://www.ditig.com/downloads/256-colors.json
 
