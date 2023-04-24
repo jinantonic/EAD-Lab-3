@@ -140,7 +140,7 @@
             }); // end get
         }); // End Button 6
 
-        $("#btn7").click(function() { // When the "colour table" button is clicked
+        $("#btn7").click(function() { // When the "show table" button is clicked
             $("#display-h2").show(); // Show the table header
             $("#table-header").show(); // Show the table headerá
             
