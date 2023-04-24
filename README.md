@@ -13,7 +13,7 @@ The file consists of an array of 256 elements where each element has the followi
 <br><br>
 For example, the black colour has: {"colorId":0, "hexString":"#000000", "rgb": {"r":0,"g":0,"b":0}, "hsl": {"h":0,"s":0,"l":0}, "name":"Black"}.
 
-<br>
+<br><br>
 To accomplish the assignment, you will need to create a server in Express.js that will read from a file an object in JSON format which is an array with many fields about colours. Use the methods: GET, POST, PUT, and DELETE. You can use any library/framework related to JavaScript such as Angular, React, Axios for
 developing the assignment.
 
