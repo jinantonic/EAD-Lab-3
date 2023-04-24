@@ -34,21 +34,18 @@ h2 {
 .button-container {
     display: flex;
     flex-direction: column;
-}
-
-  
-.button-container button {
-    margin-bottom: 10px;
+    padding-top: 10px;
 }
 
 #btn1, #btn2, #btn3, #btn4, #btn5, #btn6, #btn7, #btn8{
-    font-size: 12px;
+    font-size: 13px;
     background-color: #6C7A89;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 5px 5px; /* Top & Bottom, Right & Left  */
+    margin-bottom: 10px;
+    padding: 7px 5px; /* Top & Bottom, Right & Left  */
 }
 
 #btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover, #btn6:hover, #btn7:hover {
@@ -64,6 +61,7 @@ h2 {
     border: 2px solid #495464;
     border-radius: 5px;
     width: 100%;
+    margin: 0 auto;
 }
 
 .input-box {
@@ -106,7 +104,8 @@ h2 {
 .display-colour {
     width: 105px;
     height: 105px;
-    border: none;
+    border: 1px solid black;
+    border-radius: 3px;
     margin-bottom: 10px;
 }
 
