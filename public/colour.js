@@ -214,14 +214,14 @@
             $.ajax({
                 url: `/reset_colours`,
                 type: 'PUT',
-                contentType: 'application/json', // Add this line
+                contentType: 'application/json',
                 success: function(result) {
-                    alert(`Colour ${name} modified successfully`);
-                    $("#btn6").click();
+                    alert(`Table has been reset successfully`);
+                    $("#btn7").click();
                 },
                 error: function(xhr, status, error) {
                     // Display an error message if the colour cannot be modified
-                    alert('Error modifying colour');
+                    alert('Error resetting the table');
                 }
             });
         });
