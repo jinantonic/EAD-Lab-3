@@ -48,7 +48,7 @@ h2 {
     padding: 7px 5px; /* Top & Bottom, Right & Left  */
 }
 
-#btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover, #btn6:hover, #btn7:hover {
+#btn1:hover, #btn2:hover, #btn3:hover, #btn4:hover, #btn5:hover, #btn6:hover, #btn7:hover, #btn8:hover {
     background-color: #D3D6DB;
     color: #6C7A89;
 }
