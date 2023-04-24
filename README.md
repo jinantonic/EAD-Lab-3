@@ -5,11 +5,11 @@ The exact links for the JSON object is: https://www.ditig.com/downloads/256-colo
 
 <br>
 The file consists of an array of 256 elements where each element has the following fields:
-- colorId: The number of colours on the list.
-- hexString: The value in hexadecimal number
-- RGB: The code of the colour in RGB format.
-- Hsl: The code of the colour of HSL format.
-- Name: The name of the colour in plain English.
+<br>- colorId: The number of colours on the list.
+<br>- hexString: The value in hexadecimal number
+<br>- RGB: The code of the colour in RGB format.
+<br>- Hsl: The code of the colour of HSL format.
+<br>- Name: The name of the colour in plain English.
 
 For example, the black colour has: {"colorId":0, "hexString":"#000000", "rgb": {"r":0,"g":0,"b":0}, "hsl": {"h":0,"s":0,"l":0}, "name":"Black"}.
 
