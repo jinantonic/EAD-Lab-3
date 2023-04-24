@@ -8,43 +8,18 @@
         const currentColor = getCookie("colourId"); // Get the cookie
         if (currentColor) { // If the cookie exists
             $("#ColourId").val(currentColor); // Set the value of the ColourId input box
-            $("#btn1").click(); // Trigger button 1 click event
+            getColour(currentColor); // Get the colour details
             $('#colourIdNav').val(currentColor); // Set the value of the input box between arrows
-        }
+        } // end if
 
-        $("#btnLeft").click(function() { // When the "left arrow" button is clicked
-            let currentColourId = parseInt($('#ColourId').val()); // Get the value of the ColourId input box
-            if (!isNaN(currentColourId) && currentColourId > 1) { // If the value is a number and greater than 1
-                currentColourId--; // Decrement the value
-                $('#ColourId').val(currentColourId); // Set the value of the ColourId input box
-                $("#btn1").trigger("click"); // Trigger button 1 click event
-            } // end if
-        }); // end click
-    
-        $("#colourIdNav").on("keyup", function(event) { // When the user presses a key in the input box between arrows
-            if (event.keyCode === 13) { // If Enter key is pressed
-                event.preventDefault(); // Prevent the form from submitting d
-                const colourId = $(this).val(); // Get the value of the input box
-                $("#ColourId").val(colourId); // Set the value of the ColourId input box
-                $("#btn1").click(); // Trigger button 1 click event
-            } // end if
-        }); // end keyup
+        const currentBackground = getCookie("colourBackground"); // Get the cookie
+        if(currentBackground) { // If the cookie exists 
+            $('body').css('background-color', currentBackground); // Change the background color of the entire page
+        } // end if
 
-        $("#btnRight").click(function() { // When the "right arrow" button is clicked
-            let currentColourId = parseInt($('#ColourId').val());
-            if (!isNaN(currentColourId)) { // If the value is a number
-                currentColourId++; // Increment the value
-                $('#ColourId').val(currentColourId); // Set the value of the ColourId input box
-                $("#btn1").trigger("click"); // Trigger button 1 click event
-            } // end if
-        }); // end click
-
-        $("#btn1").click(function() { // When the "show colour" button is clicked
-            const colourId = $('#ColourId').val(); // Get the value of the ColourId input box
- 
+        function getColour(colourId) {
             $.get(`/colours/${colourId}`, function(colour) { // When the data is retrieved, execute this code
-                // Update the display with the colour details
-                $('#hexString').val(colour.hexString);
+                $('#hexString').val(colour.hexString); // Update the display with the colour details
                 $('#RGB').val("RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")");
                 $('#HSL').val("HSL(" + colour.hsl.h + ", " + colour.hsl.s + ", " + colour.hsl.l + ")");
                 $('#Name').val(colour.name);
@@ -57,6 +32,11 @@
                 alert('Colour not found!'); // Display an error message
                 $(location).attr('href','404.html'); // Redirect to the 404 page
             }); // end get
+        }
+
+        $("#btn1").click(function() { // When the "show colour" button is clicked
+            const colourId = $('#ColourId').val(); // Get the value of the ColourId input box
+            getColour(colourId); // Call the getColour function
         }); // End Button 1
 
         $("#btn2").click(function() { // When the "insert colour" button is clicked
@@ -134,8 +114,7 @@
         }); // End Buttion 4
         
         $("#btn5").click(function() { // When the "clear" button is clicked
-            // Clear the input boxes
-            $('#ColourId').val('');
+            $('#ColourId').val(''); // Clear the input boxes
             $('#hexString').val('');
             $('#RGB').val('');
             $('#HSL').val('');
@@ -146,15 +125,14 @@
         $("#btn6").click(function() { // When the "select background" button is clicked
             const colourId = $('#ColourId').val();
             $.get(`/colours/${colourId}`, function(colour) { // Get the colour from the database
-                // Set the values of the input boxes
-                $('#hexString').val(colour.hexString);
+                $('#hexString').val(colour.hexString); // Set the values of the input boxes
                 $('#RGB').val("RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")");
                 $('#HSL').val("HSL(" + colour.hsl.h + ", " + colour.hsl.s + ", " + colour.hsl.l + ")");
                 $('#Name').val(colour.name);
                 $('#display-colour').css('background-color', colour.hexString);
                 $('body').css('background-color', colour.hexString); // Change the background color of the entire page
                 
-                document.cookie = "colourId=" + colourId + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+                document.cookie = "colourBackground=" + colour.hexString + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
 
             }).fail(function() { // If the colour is not found
                 alert('Colour not found!'); // Display an error message
@@ -169,8 +147,7 @@
             $.get("/colours", function(colours) { // Get the colours from the database
                 $.each(colours, function(index, colour) { // Loop through the colours array
                     const rgbString = "RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")"; // Create the RGB string
-                    const hslString = "HSL(" + colour.hsl.h + ", " + colour.hsl.s + ", " + colour.hsl.l + ")"; // Create the HSL string
-                    // Create the table row
+                    const hslString = "HSL(" + Math.floor(colour.hsl.h) + ", " + colour.hsl.s + "%, " + colour.hsl.l + "%)"; // Create the HSL string
                     const row = `<tr>
                                     <td><div class="display-colour" style="background-color:${colour.hexString}"></div></td>
                                     <td>${colour.colorId}</td>
@@ -178,7 +155,7 @@
                                     <td>${colour.hexString}</td>
                                     <td>${rgbString}</td>
                                     <td>${hslString}</td>
-                                </tr>`;
+                                </tr>`; // Create the table row
                     $("#table-content tbody").append(row); // Add the row to the table
                 }); // end each
             }).fail(function() { // If the colours cannot be retrieved
@@ -194,13 +171,41 @@
                 contentType: 'application/json',
                 success: function(result) { // If the table is reset successfully
                     alert(`Table has been reset successfully.`); // Display a success message
-                    $("#btn7").click(); // Refresh the table
+                    location.reload(); // Reload the page
+                    $("#btn7").trigger("click"); // Trigger button 7 click event
                 }, // end success
                 error: function(xhr, status, error) { // If the table cannot be reset
                     alert('Error resetting the table!'); // Display an error message
                 } // end error
             }); // end ajax
         }); // End Button 8
+
+        $("#btnLeft").click(function() { // When the "left arrow" button is clicked
+            let currentColourId = parseInt($('#ColourId').val()); // Get the value of the ColourId input box
+            if (!isNaN(currentColourId) && currentColourId > 1) { // If the value is a number and greater than 1
+                currentColourId--; // Decrement the value
+                $('#ColourId').val(currentColourId); // Set the value of the ColourId input box
+                $("#btn1").trigger("click"); // Trigger button 1 click event
+            } // end if
+        }); // end click
+    
+        $("#colourIdNav").on("keyup", function(event) { // When the user presses a key in the input box between arrows
+            if (event.keyCode === 13) { // If Enter key is pressed
+                event.preventDefault(); // Prevent the form from submitting d
+                const colourId = $(this).val(); // Get the value of the input box
+                $("#ColourId").val(colourId); // Set the value of the ColourId input box
+                $("#btn1").click(); // Trigger button 1 click event
+            } // end if
+        }); // end keyup
+
+        $("#btnRight").click(function() { // When the "right arrow" button is clicked
+            let currentColourId = parseInt($('#ColourId').val());
+            if (!isNaN(currentColourId)) { // If the value is a number
+                currentColourId++; // Increment the value
+                $('#ColourId').val(currentColourId); // Set the value of the ColourId input box
+                $("#btn1").trigger("click"); // Trigger button 1 click event
+            } // end if
+        }); // end click
 
         function getCookie(name) { // Get the cookie
             const value = "; " + document.cookie;

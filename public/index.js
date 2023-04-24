@@ -6,22 +6,21 @@ const path = require('path'); // Import the path module
 const app = express(); // Create a new Express app
 const dataFilePath = path.join(__dirname, 'data/data.json'); // Set the path to the data file
 const rawData = fs.readFileSync(dataFilePath); // Read the data file
-const backupData = fs.readFileSync(path.join(__dirname, "data/data-origin.json")); // Read the backup data file
+const backupData = fs.readFileSync(path.join(__dirname, "data/backup.json")); // Read the backup data file
 const originalData = JSON.parse(backupData); // Parse the backup data file
 let colours = JSON.parse(rawData); // Parse the data file
 
 app.use(express.static('public')); // Serve static files from the public directory
-console.log('Loaded colours:', colours); // Log the colours to the console
+// console.log('Loaded colours:', colours); // Log the colours to the console
 
 app.get('/colours', (req, res) => { // GET /colours - Get the list of all colours and their details
     res.json(colours); // Return the colours as JSON
 }); // end get
 
 app.use(express.json()); // Use the built-in JSON middleware to parse incoming JSON request bodies
-
 app.use(express.urlencoded({ // Use the built-in urlencoded middleware to parse incoming form data
     extended: true
-}))
+})) // end use
 
 app.get('/colours/:id', (req, res) => { // GET /colours/:id - Get the details of colour id
     const id = parseInt(req.params.id); // Get the id from the request parameters
@@ -43,6 +42,7 @@ app.post('/colours', (req, res) => { // POST /colours - Create a new colour with
         hsl,
         name
     }; // end newColour
+
     colours.push(newColour); // Add the new colour to the array of colours
     fs.writeFileSync(dataFilePath, JSON.stringify(colours)); // Write the colours to the data file
     res.status(201).json({ uri: `/colours/${newColour.colorId}` }); // Return a 201 Created status code with the URI of the new colour
@@ -57,6 +57,7 @@ app.put('/colours/:id', (req, res) => { // PUT /colours/:id - Modify colour id (
         colour.rgb = rgb;
         colour.hsl = hsl;
         colour.name = name;
+
     } else { // If the colour doesn't exist, 
         colour = { // Create a new colour object
             colorId: id,
@@ -67,6 +68,7 @@ app.put('/colours/:id', (req, res) => { // PUT /colours/:id - Modify colour id (
         }; // end newColour
         colours.push(colour); // Add the new colour to the array of colours
     } // end if else
+
     fs.writeFileSync(dataFilePath, JSON.stringify(colours));
     res.json({ uri: `/colours/${colour.colorId}` }); // Return a 200 OK status code with the URI of the new colour
 }); // end put
@@ -79,8 +81,10 @@ app.delete('/colours/:id', (req, res) => { // DELETE /colours/:id - Delete colou
         for (let i = index; i < colours.length; i++) { 
             colours[i].colorId--; // Decrement the ids of all colours with a higher id
         } // end for
+        
         fs.writeFileSync(dataFilePath, JSON.stringify(colours)); // Write the colours to the data file
         res.sendStatus(204); // Return a 204 No Content status code
+
     } else { // If the colour doesn't exist,
         res.status(404).send('Colour not found!'); // Return a 404 Not Found status code
     } // end if else

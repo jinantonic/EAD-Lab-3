@@ -98,13 +98,13 @@ h2 {
 
 .display-colour-title {
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .display-colour {
-    width: 105px;
-    height: 105px;
-    border: 1px solid black;
+    width: 115px;
+    height: 115px;
+    border: 1.5px solid black;
     border-radius: 3px;
     margin-bottom: 10px;
 }
