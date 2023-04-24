@@ -1,4 +1,4 @@
-/* index.js - server-side JavaScript for the Colour API web app */
+// index.js - server-side JavaScript for the Colour API web app
 
 const express = require('express'); // Import the Express web framework
 const fs = require('fs'); // Import the file system module
@@ -81,7 +81,7 @@ app.delete('/colours/:id', (req, res) => { // DELETE /colours/:id - Delete colou
         for (let i = index; i < colours.length; i++) { 
             colours[i].colorId--; // Decrement the ids of all colours with a higher id
         } // end for
-        
+
         fs.writeFileSync(dataFilePath, JSON.stringify(colours)); // Write the colours to the data file
         res.sendStatus(204); // Return a 204 No Content status code
 

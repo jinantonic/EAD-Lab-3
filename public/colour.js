@@ -1,4 +1,4 @@
-/* colour.js - client-side JavaScript for the Colour API web app */
+// colour.js - client-side JavaScript for the Colour API web app 
 
 (function ($) {
     $(document).ready(function() { // When the document is ready
@@ -17,8 +17,8 @@
             $('body').css('background-color', currentBackground); // Change the background color of the entire page
         } // end if
 
-        function getColour(colourId) {
-            $.get(`/colours/${colourId}`, function(colour) { // When the data is retrieved, execute this code
+        function getColour(colourId) { 
+            $.get(`/colours/${colourId}`, function(colour) { // Get the colour with the specified id
                 $('#hexString').val(colour.hexString); // Update the display with the colour details
                 $('#RGB').val("RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")");
                 $('#HSL').val("HSL(" + Math.floor(colour.hsl.h) + ", " + colour.hsl.s + "%, " + colour.hsl.l + "%)");
@@ -32,7 +32,7 @@
                 alert('Colour not found!'); // Display an error message
                 $(location).attr('href','404.html'); // Redirect to the 404 page
             }); // end get
-        }
+        } // end getColour
 
         $("#btn1").click(function() { // When the "show colour" button is clicked
             const colourId = $('#ColourId').val(); // Get the value of the ColourId input box
@@ -158,6 +158,7 @@
                                 </tr>`; // Create the table row
                     $("#table-content tbody").append(row); // Add the row to the table
                 }); // end each
+                
             }).fail(function() { // If the colours cannot be retrieved
                 alert('Colours data not found!'); // Display an error message
                 $(location).attr('href','404.html'); // Redirect to the 404 page
