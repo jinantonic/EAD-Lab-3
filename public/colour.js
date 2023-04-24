@@ -1,4 +1,4 @@
-/* colour.js --> client-side JavaScript for the Colour API web app */
+/* colour.js - client-side JavaScript for the Colour API web app */
 
 (function ($) {
     $(document).ready(function() { // When the document is ready
@@ -21,7 +21,7 @@
             $.get(`/colours/${colourId}`, function(colour) { // When the data is retrieved, execute this code
                 $('#hexString').val(colour.hexString); // Update the display with the colour details
                 $('#RGB').val("RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")");
-                $('#HSL').val("HSL(" + colour.hsl.h + ", " + colour.hsl.s + ", " + colour.hsl.l + ")");
+                $('#HSL').val("HSL(" + Math.floor(colour.hsl.h) + ", " + colour.hsl.s + "%, " + colour.hsl.l + "%)");
                 $('#Name').val(colour.name);
                 $('#display-colour').css('background-color', colour.hexString); // Set the background colour of the display-colour div
                 $('#colourIdNav').val(colourId); // Set the value of the input box between arrows
@@ -127,7 +127,7 @@
             $.get(`/colours/${colourId}`, function(colour) { // Get the colour from the database
                 $('#hexString').val(colour.hexString); // Set the values of the input boxes
                 $('#RGB').val("RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")");
-                $('#HSL').val("HSL(" + colour.hsl.h + ", " + colour.hsl.s + ", " + colour.hsl.l + ")");
+                $('#HSL').val("HSL(" + Math.floor(colour.hsl.h) + ", " + colour.hsl.s + "%, " + colour.hsl.l + "%)");
                 $('#Name').val(colour.name);
                 $('#display-colour').css('background-color', colour.hexString);
                 $('body').css('background-color', colour.hexString); // Change the background color of the entire page
