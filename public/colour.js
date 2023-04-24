@@ -108,7 +108,7 @@
                         alert('Colour not found!'); // Display an error message
                     } else { // If the colour cannot be removed
                         alert('Error removing colour!'); // Display an error message
-                    } // end if
+                    } // end if else
                 } // end error
             }); // end ajax
         }); // End Buttion 4
@@ -119,7 +119,7 @@
             $('#RGB').val('');
             $('#HSL').val('');
             $('#Name').val('');
-            $('#display-colour').css('background-color', '');
+            $('#display-colour').css('background-color', ''); // Clear the background colour of the display-colour div
         }); // End Button 5
         
         $("#btn6").click(function() { // When the "select background" button is clicked
@@ -129,10 +129,10 @@
                 $('#RGB').val("RGB(" + colour.rgb.r + ", " + colour.rgb.g + ", " + colour.rgb.b + ")");
                 $('#HSL').val("HSL(" + Math.floor(colour.hsl.h) + ", " + colour.hsl.s + "%, " + colour.hsl.l + "%)");
                 $('#Name').val(colour.name);
-                $('#display-colour').css('background-color', colour.hexString);
+                $('#display-colour').css('background-color', colour.hexString); // Change the background colour of the display-colour div
                 $('body').css('background-color', colour.hexString); // Change the background color of the entire page
                 
-                document.cookie = "colourBackground=" + colour.hexString + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+                document.cookie = "colourBackground=" + colour.hexString + "; expires=Fri, 31 Dec 9999 23:59:59 GMT"; // Set the cookie
 
             }).fail(function() { // If the colour is not found
                 alert('Colour not found!'); // Display an error message
@@ -142,7 +142,7 @@
 
         $("#btn7").click(function() { // When the "show table" button is clicked
             $("#display-h2").show(); // Show the table header
-            $("#table-header").show(); // Show the table headerá
+            $("#table-header").show(); // Show the table header
             
             $.get("/colours", function(colours) { // Get the colours from the database
                 $.each(colours, function(index, colour) { // Loop through the colours array
@@ -158,7 +158,7 @@
                                 </tr>`; // Create the table row
                     $("#table-content tbody").append(row); // Add the row to the table
                 }); // end each
-                
+
             }).fail(function() { // If the colours cannot be retrieved
                 alert('Colours data not found!'); // Display an error message
                 $(location).attr('href','404.html'); // Redirect to the 404 page

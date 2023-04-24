@@ -29,7 +29,7 @@ app.get('/colours/:id', (req, res) => { // GET /colours/:id - Get the details of
         res.json(colour); // Return the colour as JSON
     } else { // If the colour doesn't exist
         res.status(404).send('Colour not found!'); // Return a 404 Not Found status code
-    } // end if
+    } // end if else
 }); // end get
 
 app.post('/colours', (req, res) => { // POST /colours - Create a new colour with the details provided
