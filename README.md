@@ -128,7 +128,7 @@ background colour of the entire page to that colour.
 
 ### Cookie
 ![Sketch](images/6th-bg.png)
-One of the important features here is the cookie, when a user selects a colour or sets a colour as a background, the colour’s id is stored in a cookie (colourId) with an expiration data set far in the future. This allows the code to remember the selected colour even if the user refreshes or navigates away from the page.
+One of the important features here is the **cookie**, when a user selects a colour or sets a colour as a background, the colour’s id is stored in a cookie (colourId) with an expiration data set far in the future. This allows the code to remember the selected colour even if the user refreshes or navigates away from the page.
 
 </br>
 
