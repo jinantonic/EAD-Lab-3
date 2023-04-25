@@ -49,19 +49,23 @@ This is the first look at the website. The main page consists of **8 buttons** o
 
 ### First Button
 ![Sketch](images/1st.png)
-Click the **DISPLAY ALL** button.
+Enter the colour id and click the **SHOW COLOUR** button. It retrieves and displays the details of the colour with the specified colour id.
 
 </br>
 
-![Sketch](images/loading.png)
-It will first display the spinner with the message "Loading the table".
+### Second Button
+![Sketch](images/2nd.png)
+Moving onto the second button, enter the new colour details such as hexString, RGB, HSL and Name, and click the **INSERT COLOUR** button. If I insert the new colour, the new row will be appended to the end of the table. 
 
 </br>
 
-![Sketch](images/1st-table.png)
-Once all the files have been read, it will generate a unique message "The table has been created and it has taken 5 seconds" along with the full table. 
+![Sketch](images/2nd-msg.png)
+After you get the success message, you can refresh the homepage and click **SHOW TABLE**. 
 
 </br>
 
-![Sketch](images/more-table.png)
-You can scroll down to see the all contents of the table.
+![Sketch](images/2nd-table.png)
+You can see the new colour **SteelBlueBlues** was added to the table along with the success message.
+
+
+
