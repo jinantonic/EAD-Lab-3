@@ -162,7 +162,7 @@ You can see all the contents are reverted to their original state.
 
 ### Left & Right arrow buttons and the input box
 ![Sketch](images/lr.png)</br>
-**Left and Right arrow** buttons are used for navigating and the **input box** in the middle is to allow the users to enter colour id manually.
+**Left** and **Right arrow** buttons are used for navigating and the **input box** in the middle is to allow the users to enter colour id manually.
 
 </br>
 
