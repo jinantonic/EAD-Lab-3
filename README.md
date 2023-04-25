@@ -133,7 +133,7 @@ One of the important features here is the cookie, when a user selects a colour o
 </br>
 
 ![Sketch](images/6th-bg.png)
-As you can see, it still remembers the colour details and the background after refreshing the page.
+As you can see, it still remembers the colour details and the background colour after refreshing the page.
 
 </br>
 
