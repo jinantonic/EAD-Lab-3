@@ -47,13 +47,13 @@ This is the first look at the website. The main page consists of **8 buttons** o
 
 </br>
 
-### First Button
+### 1st Button
 ![Sketch](images/1st.png)
 Enter the colour id and click the **Show Colour** button. It retrieves and displays the details of the colour with the specified colour id.
 
 </br>
 
-### Second Button
+### 2nd Button
 ![Sketch](images/2nd.png)
 Moving onto the second button, enter the new colour details such as hexString, RGB, HSL and Name, and click the **Insert Colour** button. If I insert the new colour, the new row will be appended to the end of the table. 
 
@@ -69,7 +69,7 @@ You can see the new colour **SteelBlueBlues** was added to the table along with 
 
 </br>
 
-### Third Button
+### 3rd Button
 ![Sketch](images/3rd.png)
 Then we move on to the **Modify Colour** button. Enter the new colour details such as hexString, RGB, HSL and Name, and click the **Modify Colour** button.
 
@@ -86,9 +86,9 @@ You can see the colour **Green** was modified as **GreenGreen** with the new det
 
 </br>
 
-### Fourth Button
+### 4th Button
 ![Sketch](images/4th.png)
-Then we move on to the **Remove Colour** button. Enter the colour id and select the **Show Colour** button to display the colour that you would like to remove. Check the displayed colour and click **Remove Colour** button to remove it.  
+Moving onto the **Remove Colour** button. Enter the colour id and select the **Show Colour** button to display the colour that you would like to remove. Check the displayed colour and click **Remove Colour** button to remove it.  
 
 </br>
 
@@ -103,7 +103,7 @@ You can see the colour **Olive** was removed. If I remove a colour, the correspo
 
 </br>
 
-### Fifth Button
+### 5th Button
 ![Sketch](images/5th.png)
 Then we move on to the **Clear** button. It clears all the input fileds and the display box of the colour, which allows the users to enter the new inputs without manually deleting the previous inputs.
 
@@ -114,9 +114,9 @@ As you can see, all the input fields and the display box is empty.
 
 </br>
 
-### Sixth Button
+### 6th Button
 ![Sketch](images/6th.png)
-Then we move on to the **Select Background** button. Enter the colour id and select the **Show Colour** button to display the colour. Check the displayed colour and click **Select Background** button to choose it as a background.  
+Moving onto the **Select Background** button. Enter the colour id and select the **Show Colour** button to display the colour. Check the displayed colour and click **Select Background** button to choose it as a background.  
 
 </br>
 
@@ -124,5 +124,55 @@ Then we move on to the **Select Background** button. Enter the colour id and sel
 As you can see, it retrieves the colour details with the specified colour id and sets the
 background colour of the entire page to that colour.
 
+</br>
 
+### Cookie
+![Sketch](images/cookie.png)
+One of the important features here is the cookie, when a user selects a colour or sets a colour as a background, the colour’s id is stored in a cookie (colourId) with an expiration data set far in the future. This allows the code to remember the selected colour even if the user refreshes or navigates away from the page.
 
+</br>
+
+![Sketch](images/6th-bg.png)
+As you can see, it still remembers the colour details and the background after refreshing the page.
+
+</br>
+
+### 7th Button
+![Sketch](images/7th.png)
+Then we move on to the **Show Table** button. This button has been interating with other buttons above, this will retrieve all teh colours and display them on a table.
+</br>
+
+![Sketch](images/7th-table.png)
+You can see all the changes made by using the table below. Refreshing the page will keep updating the changes made on the table.
+
+</br>
+
+### 8th Button
+![Sketch](images/8th.png)
+Moving onto the **Reset Table** button. This button will reset the colours table to its default state. Click the **Reset Table** button.
+
+</br>
+
+![Sketch](images/8th-msg.png)</br>
+After you get the success message, click **Show Table** button.
+
+</br>
+
+![Sketch](images/8th-table-1.png)
+![Sketch](images/8th-table-2.png)
+You can see all the contents are reverted back to its original state.
+
+</br>
+
+### Left & Right arrow buttons and the input box
+![Sketch](images/lr.png)
+**Left and Right arrow** buttons are used for navigating and the **input box** in the middle is to allow the users to enter colour id manually.
+
+</br>
+
+![Sketch](images/lr.png)
+After you enter the colour id in the box and press enter, it will display the colour corresponds to the colour id that you entered. It is more easier and quicker to enter it manually than click the **Show Colour** button everytime you would like to search for a colour.
+
+</br>
+
+This is the end of my assignment. Thank you for your time.
