@@ -59,7 +59,7 @@ Moving onto the second button, enter the new colour details such as hexString, R
 
 </br>
 
-![Sketch](images/2nd-msg.png)
+![Sketch](images/2nd-msg.png)</br>
 After you get the success message, you can refresh the homepage and click **SHOW TABLE**. 
 
 </br>
