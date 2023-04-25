@@ -85,7 +85,8 @@ After you get the success message, you can refresh the homepage and click **SHOW
 
 </br>
 
-![Sketch](images/2nd-table.png)
+![Sketch](images/3rd-green-1.png)
+![Sketch](images/3rd-green-2.png)
 You can see the colour **Green** was modified as **GreenGreen** with the new hexString of #008001.
 
 </br>
