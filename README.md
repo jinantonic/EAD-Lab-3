@@ -88,7 +88,7 @@ You can see the colour **Green** was modified as **GreenGreen** with the new det
 
 ### 4th Button
 ![Sketch](images/4th.png)
-Moving onto the **Remove Colour** button. Enter the colour id and select the **Show Colour** button to display the colour that you would like to remove. Check the displayed colour and click **Remove Colour** button to remove it.  
+Moving onto the **Remove Colour** button. Enter the colour id and select the **Show Colour** button to display the colour that you would like to remove. Check the displayed colour and click the **Remove Colour** button to remove it.  
 
 </br>
 
@@ -105,7 +105,7 @@ You can see the colour **Olive** was removed. If I remove a colour, the correspo
 
 ### 5th Button
 ![Sketch](images/5th.png)
-Then we move on to the **Clear** button. It clears all the input fileds and the display box of the colour, which allows the users to enter the new inputs without manually deleting the previous inputs.
+Then we move on to the **Clear** button. It clears all the input fields and the display box of the colour, which allows the users to enter the new inputs without manually deleting the previous inputs.
 
 </br>
 
@@ -116,7 +116,7 @@ As you can see, all the input fields and the display box is empty.
 
 ### 6th Button
 ![Sketch](images/6th.png)
-Moving onto the **Select Background** button. Enter the colour id and select the **Show Colour** button to display the colour. Check the displayed colour and click **Select Background** button to choose it as a background.  
+Moving onto the **Select Background** button. Enter the colour id and select the **Show Colour** button to display the colour. Check the displayed colour and click the **Select Background** button to choose it as a background.  
 
 </br>
 
@@ -139,7 +139,8 @@ As you can see, it still remembers the colour details and the background after r
 
 ### 7th Button
 ![Sketch](images/7th.png)
-Then we move on to the **Show Table** button. This button has been interating with other buttons above, this will retrieve all teh colours and display them on a table.
+Then we move on to the **Show Table** button. This button has been interacting with other buttons above, this will retrieve all the colours and display them on a table.
+
 </br>
 
 ![Sketch](images/7th-table.png)
@@ -154,13 +155,13 @@ Moving onto the **Reset Table** button. This button will reset the colours table
 </br>
 
 ![Sketch](images/8th-msg.png)</br>
-After you get the success message, click **Show Table** button.
+After you get the success message, click the **Show Table** button.
 
 </br>
 
 ![Sketch](images/8th-table-1.png)
 ![Sketch](images/8th-table-2.png)
-You can see all the contents are reverted back to its original state.
+You can see all the contents are reverted to their original state.
 
 </br>
 
@@ -171,7 +172,14 @@ You can see all the contents are reverted back to its original state.
 </br>
 
 ![Sketch](images/lr.png)
-After you enter the colour id in the box and press enter, it will display the colour corresponds to the colour id that you entered. It is more easier and quicker to enter it manually than click the **Show Colour** button everytime you would like to search for a colour.
+After you enter the colour id in the box and press enter, it will display the colour corresponding to the colour id that you entered. It is easier and quicker to enter it manually than click the **Show Colour** button every time you would like to search for a colour.
+
+</br>
+
+### 404 page
+![Sketch](images/404.png)
+This is a custom HTML page for a **404 error**. If the user types a wrong address, this page will get displayed indicating that the error has been made, and the user can go back to the main page by clicking the **homepage**.
+
 
 </br>
 
