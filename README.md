@@ -43,7 +43,7 @@ Once it is running successfully, go to http://localhost:8080/index.html on the b
 </br>
 
 ![Sketch](images/home.png)
-This is the first look at the website. The main page consists of **8 buttons** on the left side, and the **colour input boxes** along with the **colour display box** on the right side. Below them, there are **left** and **right arrow buttons** for navigating and the **input box** to enter the colour id manually.
+This is the first look of the website. The main page consists of **8 buttons** on the left side, and the **colour input boxes** along with the **colour display box** on the right side. Below them, there are **left** and **right arrow buttons** for navigating and the **input box** to enter the colour id manually.
 
 </br>
 
