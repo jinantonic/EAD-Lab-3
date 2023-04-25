@@ -167,7 +167,7 @@ You can see all the contents are reverted to their original state.
 </br>
 
 ![Sketch](images/lr-2.png)
-After you enter the colour id in the box and press enter, it will display the colour corresponding to the colour id that you entered. It is easier and quicker to enter it manually than click the **Show Colour** button every time you would like to search for a colour.
+After you enter the colour id in the box and press the **Enter Key**, it will display the colour corresponding to the colour id that you entered. It is easier and quicker to enter it manually than click the **Show Colour** button every time you would like to search for a colour.
 
 </br>
 
