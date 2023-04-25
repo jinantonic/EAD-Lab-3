@@ -49,18 +49,18 @@ This is the first look at the website. The main page consists of **8 buttons** o
 
 ### First Button
 ![Sketch](images/1st.png)
-Enter the colour id and click the **SHOW COLOUR** button. It retrieves and displays the details of the colour with the specified colour id.
+Enter the colour id and click the **Show Colour** button. It retrieves and displays the details of the colour with the specified colour id.
 
 </br>
 
 ### Second Button
 ![Sketch](images/2nd.png)
-Moving onto the second button, enter the new colour details such as hexString, RGB, HSL and Name, and click the **INSERT COLOUR** button. If I insert the new colour, the new row will be appended to the end of the table. 
+Moving onto the second button, enter the new colour details such as hexString, RGB, HSL and Name, and click the **Insert Colour** button. If I insert the new colour, the new row will be appended to the end of the table. 
 
 </br>
 
 ![Sketch](images/2nd-msg.png)</br>
-After you get the success message, you can refresh the homepage and click **SHOW TABLE**. 
+After you get the success message, you can refresh the homepage and click **Show Table**. 
 
 </br>
 
@@ -71,20 +71,58 @@ You can see the new colour **SteelBlueBlues** was added to the table along with 
 
 ### Third Button
 ![Sketch](images/3rd.png)
-Then we move on to the **MODIFY COLOUR** button. Enter the new colour details such as hexString, RGB, HSL and Name, and click the **MODIFY COLOUR** button.
+Then we move on to the **Modify Colour** button. Enter the new colour details such as hexString, RGB, HSL and Name, and click the **Modify Colour** button.
 
 </br>
 
-![Sketch](images/3rd-msg.png)
-After you get the success message, you can refresh the homepage and click **SHOW TABLE**. 
+![Sketch](images/3rd-msg.png)</br>
+After you get the success message, you can refresh the homepage and click **Show Table**. 
 
 </br>
 
 ![Sketch](images/3rd-green-1.png)
 ![Sketch](images/3rd-green-2.png)
-You can see the colour **Green** was modified as **GreenGreen** with the new hexString of #008001.
+You can see the colour **Green** was modified as **GreenGreen** with the new details.
 
 </br>
 
-### Third Button
+### Fourth Button
+![Sketch](images/4th.png)
+Then we move on to the **Remove Colour** button. Enter the colour id and select the **Show Colour** button to display the colour that you would like to remove. Check the displayed colour and click **Remove Colour** button to remove it.  
+
+</br>
+
+![Sketch](images/4th-msg.png)</br>
+After you get the success message, you can refresh the homepage and click **Show Table**.
+
+</br>
+
+![Sketch](images/4th-olive-1.png)
+![Sketch](images/4th-olive-2.png)
+You can see the colour **Olive** was removed. If I remove a colour, the corresponding table row will be removed from the table.
+
+</br>
+
+### Fifth Button
+![Sketch](images/5th.png)
+Then we move on to the **Clear** button. It clears all the input fileds and the display box of the colour, which allows the users to enter the new inputs without manually deleting the previous inputs.
+
+</br>
+
+![Sketch](images/5th-clear.png)
+As you can see, all the input fields and the display box is empty.
+
+</br>
+
+### Sixth Button
+![Sketch](images/6th.png)
+Then we move on to the **Select Background** button. Enter the colour id and select the **Show Colour** button to display the colour. Check the displayed colour and click **Select Background** button to choose it as a background.  
+
+</br>
+
+![Sketch](images/6th-bg.png)
+As you can see, it retrieves the colour details with the specified colour id and sets the
+background colour of the entire page to that colour.
+
+
 
