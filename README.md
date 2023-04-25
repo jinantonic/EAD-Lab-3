@@ -71,12 +71,7 @@ You can see the new colour **SteelBlueBlues** was added to the table along with 
 
 ### Third Button
 ![Sketch](images/3rd.png)
-Then we move on to the **MODIFY COLOUR** button. This button modifies the colour details with the specified colour id with the new details provided in the input field.
-
-</br>
-
-![Sketch](images/3rd-table.png)
-Enter the new colour details such as hexString, RGB, HSL and Name, and click the **MODIFY COLOUR** button.
+Then we move on to the **MODIFY COLOUR** button. Enter the new colour details such as hexString, RGB, HSL and Name, and click the **MODIFY COLOUR** button.
 
 </br>
 
