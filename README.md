@@ -176,6 +176,6 @@ After you enter the colour id in the box and press the **Enter Key**, it will di
 This is a custom HTML page for a **404 error**. If the user types a wrong address, this page will get displayed indicating that the error has been made, and the user can go back to the main page by clicking the **homepage**.
 
 
-</br>
+</br></br>
 
 This is the end of my assignment. Thank you for your time.
