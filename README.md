@@ -60,7 +60,7 @@ Moving onto the second button, enter the new colour details such as hexString, R
 </br>
 
 ![Sketch](images/2nd-msg.png)</br>
-After you get the success message, you can refresh the homepage and click **Show Table**. 
+After you get the success message, you can **refresh** the homepage and click **Show Table**. 
 
 </br>
 
@@ -76,7 +76,7 @@ Then we move on to the **Modify Colour** button. Enter the new colour details su
 </br>
 
 ![Sketch](images/3rd-msg.png)</br>
-After you get the success message, you can refresh the homepage and click **Show Table**. 
+After you get the success message, you can **refresh** the homepage and click **Show Table**. 
 
 </br>
 
@@ -93,7 +93,7 @@ Moving onto the **Remove Colour** button. Enter the colour id and select the **S
 </br>
 
 ![Sketch](images/4th-msg.png)</br>
-After you get the success message, you can refresh the homepage and click **Show Table**.
+After you get the success message, you can **refresh** the homepage and click **Show Table**.
 
 </br>
 
@@ -144,7 +144,7 @@ Then we move on to the **Show Table** button. This button has been interacting w
 </br>
 
 ![Sketch](images/7th-table.png)
-You can see all the changes made by using the table below. Refreshing the page will keep updating the changes made on the table.
+You can see all the changes made by using the table below. **Refreshing the page** will keep updating the changes made on the table.
 
 </br>
 
