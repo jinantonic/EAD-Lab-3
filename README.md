@@ -161,12 +161,12 @@ You can see all the contents are reverted to their original state.
 </br>
 
 ### Left & Right arrow buttons and the input box
-![Sketch](images/lr.png)
+![Sketch](images/lr.png)</br>
 **Left and Right arrow** buttons are used for navigating and the **input box** in the middle is to allow the users to enter colour id manually.
 
 </br>
 
-![Sketch](images/lr.png)
+![Sketch](images/lr-2.png)
 After you enter the colour id in the box and press enter, it will display the colour corresponding to the colour id that you entered. It is easier and quicker to enter it manually than click the **Show Colour** button every time you would like to search for a colour.
 
 </br>
