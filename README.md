@@ -67,5 +67,28 @@ After you get the success message, you can refresh the homepage and click **SHOW
 ![Sketch](images/2nd-table.png)
 You can see the new colour **SteelBlueBlues** was added to the table along with the success message.
 
+</br>
 
+### Third Button
+![Sketch](images/3rd.png)
+Then we move on to the **MODIFY COLOUR** button. This button modifies the colour details with the specified colour id with the new details provided in the input field.
+
+</br>
+
+![Sketch](images/3rd-table.png)
+Enter the new colour details such as hexString, RGB, HSL and Name, and click the **MODIFY COLOUR** button.
+
+</br>
+
+![Sketch](images/3rd-msg.png)
+After you get the success message, you can refresh the homepage and click **SHOW TABLE**. 
+
+</br>
+
+![Sketch](images/2nd-table.png)
+You can see the colour **Green** was modified as **GreenGreen** with the new hexString of #008001.
+
+</br>
+
+### Third Button
 
