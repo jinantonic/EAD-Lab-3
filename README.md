@@ -1,4 +1,4 @@
-# EAD-Lab-3
+# EAD Lab 3 - Express.js 
 This assignment is about using **Express.js** for managing an application that performs operations related to colours.<br><br>
 The file with all the 256 colours can be downloaded from the Colours URL: https://jonasjacek.github.io/colors/ <br>
 The exact links for the JSON object is: https://www.ditig.com/downloads/256-colors.json
@@ -16,3 +16,52 @@ For example, the black colour has: {"colorId":0, "hexString":"#000000", "rgb": {
 <br><br>
 To accomplish the assignment, you will need to create a server in Express.js that will read from a file an object in JSON format which is an array with many fields about colours. Use the methods: GET, POST, PUT, and DELETE. You can use any library/framework related to JavaScript such as Angular, React, Axios for
 developing the assignment.
+
+</br></br>
+
+## README File
+My GitHub repo is https://github.com/jinantonic/EAD-Lab-3.</br>
+You can find the detailed README file at https://github.com/jinantonic/EAD-Lab-3/blob/main/README.md.</br>
+This file contains clearer instructions on how to navigate my website and the parts that I have accomplished.
+
+</br></br>
+
+## My solution
+![Sketch](images/port.png)
+In the **index.js** file, the port number is set as 8080.
+
+</br>
+
+![Sketch](images/node.png)
+Run **node public/index.js** on the terminal and check if a node server is running.
+
+</br>
+
+![Sketch](images/localhost.png)
+Once it is running successfully, go to http://localhost:8080/index.html on the browser to see the website.
+
+</br>
+
+![Sketch](images/home.png)
+This is the first look at the website. The main page consists of **8 buttons** on the left side, and the **colour input boxes** along with the **colour display box** on the right side. Below them, there are **left** and **right arrow buttons** for navigating and the **input box** to enter the colour id manually.
+
+</br>
+
+### First Button
+![Sketch](images/1st.png)
+Click the **DISPLAY ALL** button.
+
+</br>
+
+![Sketch](images/loading.png)
+It will first display the spinner with the message "Loading the table".
+
+</br>
+
+![Sketch](images/1st-table.png)
+Once all the files have been read, it will generate a unique message "The table has been created and it has taken 5 seconds" along with the full table. 
+
+</br>
+
+![Sketch](images/more-table.png)
+You can scroll down to see the all contents of the table.
